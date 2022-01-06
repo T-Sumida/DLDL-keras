@@ -1,8 +1,6 @@
 # DLDL-keras
 
-# +++++++++++++++++++++
 # Under development
-# +++++++++++++++++++++
 
 ## Overview
 keras implementation of DLDL-v2.
