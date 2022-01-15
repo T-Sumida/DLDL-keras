@@ -8,6 +8,7 @@ keras implementation of DLDL-v2.
 ## Requirement
 - poetry
 - python=3.8
+- Tensorflow==2.5.0
 
 
 ## Usage
