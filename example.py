@@ -1,8 +1,6 @@
 import tensorflow as tf
-from tensorflow.keras.optimizers import Adam
-
 from dldl_v2.model import build_model
-
+from tensorflow.keras.optimizers import Adam
 
 if __name__ == "__main__":
 
@@ -10,6 +8,12 @@ if __name__ == "__main__":
     LEARNING_RATE = 1e-3
 
     model = build_model(INPUT_SHAPE)
-    optimizer = Adam(learning_rate=LEARNING_RATE, clipnorm=1., epsilon=1e-8)
-    model.compile(optimizer=optimizer, loss=[tf.keras.losses.kullback_leibler_divergence, tf.keras.losses.mean_absolute_error])
+    optimizer = Adam(learning_rate=LEARNING_RATE, clipnorm=1.0, epsilon=1e-8)
+    model.compile(
+        optimizer=optimizer,
+        loss=[
+            tf.keras.losses.kullback_leibler_divergence,
+            tf.keras.losses.mean_absolute_error,
+        ],
+    )
     print(model.summary())
