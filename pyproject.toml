@@ -10,6 +10,7 @@ python = "^3.8"
 tensorflow = "2.6.0"
 albumentations = "0.5.2"
 keras = "2.6.*"
+taskipy = "^1.9.0"
 
 [tool.poetry.dev-dependencies]
 pysen = {version = "0.9.1", extras = ["lint"]}
@@ -32,3 +33,8 @@ py_version = "py38"
 
 [[tool.pysen.lint.mypy_targets]]
   paths = ["."]
+
+
+[tool.taskipy.tasks]
+fmt = { cmd = "pysen run format", help = "format code" }
+lint = { cmd = "pysen run lint", help = "exec lint" }
